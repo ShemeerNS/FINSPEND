@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'Nunito Sans';
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .main {
+    width: 100%;
+    display: flex;
+    background-color: #f2f2f2;
+    height: 100vh;
+  }
+
+  .main .user {
+    text-align: right;
+  }
+  .main .column-1 {
+    width: 20%;
+    float: left;
+  }
+  .main .column-2 {
+    width: 80%;
+    float: left;
+    background-color: #fff;
+  }
+  .main .column-2 div {
+    padding: 20px;
+  }
+  .active {
+    outline: 1px solid #ddd;
+    cursor: pointer;
+    background-color: #ecf0f1;
+    color: #2980b9;
+  }
+  .vertical-menu {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    list-style-type: none;
+    padding: 0px;
+  }
+  li {
+    color: #212121;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  li:after {
+    display: none;
+  }
+  a {
+    padding: 8px;
+  }
+  @media (max-width: 550px) {
+    .column-1 {
+      width: 40% !important;
+    }
+    .column-2 {
+      width: 60% !important;
+    }
+  }
