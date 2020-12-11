@@ -8,6 +8,7 @@ import { BillerComponent } from './biller/biller.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewaccountComponent } from './newaccount/newaccount.component';
 import { AccountComponent } from './account/account.component';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AccountComponent } from './account/account.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
