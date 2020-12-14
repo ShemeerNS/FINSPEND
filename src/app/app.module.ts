@@ -23,7 +23,8 @@ import { AddbillerComponent } from './addbiller/addbiller.component';
     NewaccountComponent,
     AccountComponent,
     LoginComponent,
-    SummaryComponent
+    SummaryComponent,
+    AddbillerComponent
   ],
   imports: [
     BrowserModule,
