@@ -1,111 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
-h1
-{
-    color: darkred;
-    text-align: center;
-    padding: 10px 10px;
-    
-}
-.sitelogo
-{
-    text-align: middle;
+
+.inlineL{
+  float: left;
 }
 
-
-.mainContainer{
-    height: 100%;
-    width: 100%;
-    text-align: center;
-
-    
-   
+.inlineR{
+  float: right;
 }
-.button {
-    background-color: indianred; 
-    border: none;
-    color: white;
-    padding: 15px 15px;
-    text-align: right;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 50px 30px;
-    cursor: pointer;
-  }
-label{
-    display: block;
-    text-align: center;
-    
-    color: blueviolet;
-}
-
-label {
-    margin-bottom: 40px;
-    
-}
-.description{
-    vertical-align: middle;
-}
-
-input{
-     margin-right: 40px; 
-    
-}
-.vertbutton{
-
-    background-color: indianred; 
-    border: none;
-    color: white;
-    padding: 15px 15px;
-    text-align: center;
-    /* text-decoration: none; */
-    /* display: inline-block; */
-    font-size: 16px;
-    /* margin: 50px 30px; */
-    cursor: pointer;
-  margin-left: 1000px;
-  margin-top: 10px;
-  
-}
-.horizbutton
-{
-    background-color: indianred; 
-    border: none;
-    color: white;
-    padding: 15px 15px;
-    text-align: center;
-    /* text-decoration: none; */
-    /* display: inline-block; */
-    font-size: 16px;
-    /* margin: 50px 30px; */
-    cursor: pointer;
-    margin-left: 1050px;
-    margin-top: 0px;
-}
-.hoributton
-{
-    background-color: indianred; 
-    border: none;
-    color: white;
-    padding: 15px 15px; 
-    text-align: right;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 500px ;
-    cursor: pointer;
-    margin-top: 200px;
-  }
-
-
-* {
-    font-family: 'Nunito Sans';
-  }
-  body {
-    margin: 0;
-    padding: 0;
-  }
   .main {
     width: 100%;
     display: flex;
@@ -113,9 +15,13 @@ input{
     height: 100vh;
   }
 
-  .main .user {
+  .main .left {
+    text-align: left;
+  }
+  .main .right {
     text-align: right;
   }
+
   .main .column-1 {
     width: 20%;
     float: left;
@@ -129,8 +35,7 @@ input{
     padding: 20px;
   }
   .side-bar{
-background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+background: rgb(112, 111, 122);
 
   }
   .side-bar .vertical-menu li{

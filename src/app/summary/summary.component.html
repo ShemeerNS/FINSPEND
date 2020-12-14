@@ -1,11 +1,9 @@
-<h1 id="tableLabel">Account Summary</h1>
+<h1 id="tableLabel">Standing Instructions \ Payment Reminders</h1>
 
-<div>Total Cash Available : $2323.00 </div> <div>Upcoming payment of $2323.00 <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
-
-<p>This component demonstrates fetching data from the server.</p>
+<div class="inlineL" >Total Cash Available : $2323.00 </div> <div class="inlineR" >Upcoming payment of $2323.00 <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
 
 <p *ngIf="!BankStatements"><em>Loading...</em></p>
-
+<div class="inlineR">
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="BankStatements">
   <thead>
     <tr>
@@ -27,4 +25,14 @@
       <td>{{ data.name }}</td>
     </tr>
   </tbody>
-</table>
+</table></div>
+<div class="chart-wrapper inlineL" width="80%">
+  <canvas baseChart 
+  [data]="pieChartData" 
+  [labels]="pieChartLabels" 
+  [chartType]="pieChartType"
+  [options]="pieChartOptions"
+  [plugins]="pieChartPlugins"
+  [legend]="pieChartLegend">
+</canvas>
+</div>

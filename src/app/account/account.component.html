@@ -1,30 +1,48 @@
-<h1 id="tableLabel">Account Summary</h1>
+<h1 id="tableLabel">{{bankName}} - Standing Instructions \ Payment Reminders</h1>
 
-<div>Total Cash Available : $2323.00 </div> <div>Upcoming payment of $2323.00 <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
+<div class="inlineL">Total Cash Available : $2323.00
 
-<p>This component demonstrates fetching data from the server.</p>
+  <p *ngIf="!BankStatements"><em>Loading...</em></p>
 
-<p *ngIf="!BankStatements"><em>Loading...</em></p>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="BankStatement">
+    <thead>
+      <tr>
+        <th>Sl#</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Withdrawal Date</th>
+        <th>Withdrawal Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of BankStatement">
+        <td>{{ data.sl }}</td>
+        <td>{{ data.Type }}</td>
+        <td>{{ data.Amount }}</td>
+        <td>{{ data.Wdate }}</td>
+        <td>{{ data.Wtype }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="BankStatement">
-  <thead>
-    <tr>
-      <th>Sl#</th>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Withdrawal Date</th>
-      <th>Withdrawal Type</th>
-      <th>Bank</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let data of BankStatement">
-      <td>{{ data.sl }}</td>
-      <td>{{ data.Type }}</td>
-      <td>{{ data.Amount }}</td>
-      <td>{{ data.Wdate }}</td>
-      <td>{{ data.Wtype }}</td>
-      <td>{{ data.name }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="inlineR" style="width: 40%;">Upcoming payment of $2323.00 <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+
+
+
+  <div class="col-md-3" >
+    To Account : xxxxx122
+  </div>
+  <div class="col-md-3">
+    From Account : <select formControlName="fromAccount" class="form-control">
+      <option value="SBI-SAV- XXXX1234">SBI-SAV- XXXX1234</option>
+      <option value="SBI-SAV- XXXX5678">SBI-SAV- XXXX5678</option>
+      <option value="IOB-SAV- XXXX1278">IOB-SAV- XXXX1278</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    Amount : <input type="text" formControlName="amount" class="form-control" />
+
+  </div>
+  <button id="addbutton" class="btn btn-primary">Fund Now</button>
+</div>
