@@ -12,6 +12,7 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryComponent } from './summary/summary.component';
+import { AddbillerComponent } from './addbiller/addbiller.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SummaryComponent } from './summary/summary.component';
     NewaccountComponent,
     AccountComponent,
     LoginComponent,
-    SummaryComponent
+    SummaryComponent,
+    AddbillerComponent
   ],
   imports: [
     BrowserModule,
