@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import billerData from '../biller.json';
 
+interface biller {
+    id:number;
+    biller: string;
+    amount: string;
+    fromAccount: string;
+    frequency: string;
+    withdrawalDate: string;
+}
 @Component({
   selector: 'app-biller',
   templateUrl: './biller.component.html',
@@ -11,5 +20,5 @@ export class BillerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+billers: biller[] = billerData;
 }
