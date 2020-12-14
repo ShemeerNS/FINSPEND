@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewaccountComponent } from './newaccount/newaccount.component';
 import { AccountComponent } from './account/account.component';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { AddbillerComponent } from './addbiller/addbiller.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
     BillerComponent,
     DashboardComponent,
     NewaccountComponent,
-    AccountComponent
+    AccountComponent,
+    AddbillerComponent
   ],
   imports: [
     BrowserModule,

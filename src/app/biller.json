@@ -1,0 +1,2 @@
+[{"id":1,"biller":"Electricity","amount":"1500","fromAccount":"BOA-SAV-XXXX1234","frequency":"annual","withdrawalDate":"12-10-2020"},
+{"id":2,"biller":"Mobile","amount":"1000","fromAccount":"RAK-SAV-XXXX1400","frequency":"monthly","withdrawalDate":"12-20-2020"}]
