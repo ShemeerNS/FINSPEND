@@ -12,12 +12,6 @@ h1
     text-align: middle;
 }
 
-body
-{
-    /* background-color:turquoise; */
-    
-    background-image:url(assets/finspend.JPG);
-}
 
 .mainContainer{
     height: 100%;
