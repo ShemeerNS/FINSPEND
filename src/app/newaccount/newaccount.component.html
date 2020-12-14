@@ -1,4 +1,124 @@
-<h2>Add more accounts</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis fugiat velit saepe
-  repudiandae obcaecati! Hic dicta harum autem odio amet dignissimos doloribus, quae,
-  reprehenderit ratione, ea nulla molestias repellat ut!</p>
+<header>
+  <div>
+    <!-- <h1>Accounts</h1> -->
+  </div>
+</header>
+<style>
+  table,th,
+  td {
+    padding: 20px;
+    border: 1px solid darkred;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+
+</style>
+<!-- <input type = "submit" class = "vertibutton" value = "Verify"> -->
+<form [formGroup]="accountlisted">
+  <label>
+      Add Accounts: <select class="custom-select" style="margin-top: 100px;"  formControlName = "addaccounts">
+      <option value="" disabled>Choose your bank</option>
+      <option>HDFC</option>
+      <option>SBI</option>
+      <option>IOB</option>
+      <option>CANARA BANK</option>
+     </select>
+   </label>
+   <input type = "submit" class = "vertbutton" value = "Verify">
+    <table>
+      <thead class="text-nowrap">
+        <th>Title</th>
+        <th>Accounts</th>
+        <th>Link the account</th>
+        <!-- <th>Actors</th>
+        <th>Year Of Release</th>
+        <th>Rating</th>
+        <th>Edit</th>
+        <th>Delete</th> -->
+      </thead>
+      <tbody>
+        <ng-container formArrayName="tableRows">
+          <!-- <tr  [formGroupName]="i"> -->
+        <!-- <ng-container formArrayName="tableRows"> -->
+          <!-- <tr  [formGroupName]="i"> -->
+            <tr>
+            <td>
+             
+                <!-- <input type="text" formControlName="movieposter"> -->
+             
+            </td>
+            
+            <td>
+              
+                <!-- <input type="text" formControlName="moviename"> -->
+              
+            </td>
+
+            <td>
+
+              <input type="checkbox" id="check" name="check" value="check" style="float: right;">
+             
+                <!-- <input formControlName="description"> -->
+                <!-- <nav>
+                  <a routerLink='/viewdescscreen'>Click Here</a>
+                </nav> -->
+             
+            </td>
+            <!-- <td> -->
+              
+                <!-- <input type="text" formControlName="actors"> -->
+              
+            <!-- </td> -->
+
+            <!-- <td> -->
+              
+                <!-- <input type="date" formControlName="yearofrelease"> -->
+                
+              
+            <!-- </td> -->
+            <!-- <td> -->
+              
+              <!-- <input type="text" formControlName="rating"> -->
+              
+            
+            <!-- </td> -->
+            <!-- <td>
+              <i class="fa fa-edit" style="font-size:24px" formControlName="edit"></i>
+            
+            </td> -->
+            <!-- <td> -->
+              <!-- <i class="fa fa-trash" style="font-size:24px" formControlName="delete"></i> -->
+             
+            <!-- </td> -->
+           
+          
+           
+          </tr>
+          <!-- </tr> -->
+       <tr>
+          <td></td>
+          <td></td>
+          <td>
+            <input type="checkbox" id="check" name="check" value="check" style="float: right;">
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>
+            <input type="checkbox" id="check" name="check" value="check" style="float: right;">
+          </td>
+        </tr>
+        
+        </ng-container>
+      </tbody>
+    </table>
+    <input type = "submit" class = "hoributton" value = "Submit">
+    <input type="button" class = "hoributton" value="Cancel" (click)="homeagainscreen()">
+    <!-- <button id="add" (click)="addmoviepage()" class="button">Add A Movie</button> -->
+  </form>
+
+
+
