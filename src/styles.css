@@ -28,11 +28,20 @@
   .main .column-2 div {
     padding: 20px;
   }
-  .active {
-    outline: 1px solid #ddd;
+  .side-bar{
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+
+  }
+  .side-bar .vertical-menu li{
+    color:white;
+  }
+
+ .side-bar .vertical-menu li.active {
     cursor: pointer;
     background-color: #ecf0f1;
-    color: #2980b9;
+    color: #000;
+    font-weight: 600;
   }
   .vertical-menu {
     display: block !important;
