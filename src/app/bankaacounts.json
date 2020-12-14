@@ -1,0 +1,133 @@
+{
+    "Bank": [
+      {
+        "Name": "CHASE",
+        "AccountNumber": 1234435454,
+        "RoutingNumber": 233455345,
+        "Balance": 121212,
+        "Statement": [
+          {
+            "Amount": 200,
+            "Wdate": "12-14-2020",
+            "Category": "Shopping"
+          },
+          {
+            "Amount": 300,
+            "Wdate": "12-14-2020",
+            "Category": "Shopping"
+          }
+        ],
+        "StandingInstr": [
+          {
+            "Type": "EMI",
+            "Amount": 20000,
+            "Wdate": "12-14-2020",
+            "Wtype": "Standing Instruction",
+            "Frequency": "Monthly"
+          },
+          {
+            "Type": "EMI",
+            "Amount": 20000,
+            "Wdate": "12-14-2020",
+            "Wtype": "Standing Instruction",
+            "Frequency": "Monthly"
+          }
+        ],
+        "Biller": [
+          {
+            "Name": "Phone",
+            "Amount": 400,
+            "Wdate": "12-14-2020",
+            "Wtype": "Manual",
+            "Frequency": "Manual"
+          }
+        ]
+      },
+      {
+        "Name": "BOA",
+        "AccountNumber": 1234435454,
+        "RoutingNumber": 233455345,
+        "Balance": 121212,
+        "Statement": [
+          {
+            "Amount": 200,
+            "Wdate": "12-14-2020",
+            "Category": "Shopping"
+          },
+          {
+            "Amount": 300,
+            "Wdate": "12-14-2020",
+            "Category": "Shopping"
+          }
+        ],
+        "StandingInstr": [
+          {
+            "Type": "EMI",
+            "Amount": 20000,
+            "Wdate": "12-14-2020",
+            "Wtype": "Standing Instruction",
+            "Frequency": "Monthly"
+          },
+          {
+            "Type": "EMI",
+            "Amount": 20000,
+            "Wdate": "12-14-2020",
+            "Wtype": "Standing Instruction",
+            "Frequency": "Monthly"
+          }
+        ],
+        "Biller": [
+          {
+            "Name": "Phone",
+            "Amount": 400,
+            "Wdate": "12-14-2020",
+            "Wtype": "Manual",
+            "Frequency": "Manual"
+          }
+        ]
+      },
+      {
+        "Name": "SCB",
+        "AccountNumber": 1234435454,
+        "RoutingNumber": 233455345,
+        "Balance": 121212,
+        "Statement": [
+          {
+            "Amount": 200,
+            "Wdate": "12-14-2020",
+            "Category": "Shopping"
+          },
+          {
+            "Amount": 300,
+            "Wdate": "12-14-2020",
+            "Category": "Shopping"
+          }
+        ],
+        "StandingInstr": [
+          {
+            "Type": "EMI",
+            "Amount": 20000,
+            "Wdate": "12-14-2020",
+            "Wtype": "Standing Instruction",
+            "Frequency": "Monthly"
+          },
+          {
+            "Type": "EMI",
+            "Amount": 20000,
+            "Wdate": "12-14-2020",
+            "Wtype": "Standing Instruction",
+            "Frequency": "Monthly"
+          }
+        ],
+        "Biller": [
+          {
+            "Name": "Phone",
+            "Amount": 400,
+            "Wdate": "12-14-2020",
+            "Wtype": "Manual",
+            "Frequency": "Manual"
+          }
+        ]
+      }
+    ]
+  }
