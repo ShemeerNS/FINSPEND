@@ -13,8 +13,12 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SummaryComponent } from './summary/summary.component';
 import { AddbillerComponent } from './addbiller/addbiller.component';
+<<<<<<< HEAD
 import { AppService } from './app.service';
 
+=======
+import { ChartsModule } from 'ng2-charts';
+>>>>>>> master
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,8 @@ import { AppService } from './app.service';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
