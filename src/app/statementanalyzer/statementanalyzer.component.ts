@@ -11,5 +11,4 @@ export class StatementanalyzerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
