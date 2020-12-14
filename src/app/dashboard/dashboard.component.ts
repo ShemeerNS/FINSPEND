@@ -9,11 +9,11 @@ export class DashboardComponent implements OnInit {
   
   viewMode: number = 1;
   bankId: number = -1;
+  bankName: string = "";
   data = [];
 
   constructor() { } 
 
-  @Output() public found = new EventEmitter<any>();
   
   BankAccounts = [
     {  id: 1234, name: 'CHASE' },
@@ -23,12 +23,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.viewMode = 1;
-    console.log(this.viewMode);
   }
   setViewMode(bank: any) {
     this.viewMode = 2;
     this.bankId = bank.id;
-    this.found.emit(bank)
+    this.bankName=bank.name;
   }
 
 }

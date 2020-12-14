@@ -1,34 +1,36 @@
 <div class="main side-bar">
-    <div class="column-1">
-       
-      <div class="user text-white"> <img style="height: 50px" src ="assets/logosymbol.JPG"/> Welcome<a routerLink=""><i class="fa fa-user"></i></a>|<a routerLink=""><i class="fa fa-sign-out-alt"></i></a> </div>
-      <ul class="vertical-menu">
-        <li (click)="viewMode =1" [ngClass]="{'active':viewMode ==1}">DASHBOARD</li>
-        <li>ACCOUNTS
-          <ul class="vertical-menu">
-            <li (click)="setViewMode(bank)" [ngClass]="{'active':bankId ==bank.id}" *ngFor="let bank of BankAccounts">{{bank.name}} - {{bank.id}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></li>
-            <li (click)="viewMode =3" [ngClass]="{'active':viewMode ==3}">ADD MORE..</li>
-          </ul>
-        </li>
-        <li (click)="viewMode =4" [ngClass]="{'active':viewMode ==4}">BILLER</li>
-        <li (click)="viewMode =5" [ngClass]="{'active':viewMode ==5}">STATEMENT ANALYZER</li>
-      </ul>
+  <div class="column-1">
+
+    <div class="left text-white"> <img style="height: 50px" src="assets/Logo.png" /> <span class="right">Welcome<a
+          routerLink=""><i class="fa fa-user"></i></a>|<a routerLink=""><i class="fa fa-sign-out"></i></a></span> </div>
+    <ul class="vertical-menu">
+      <li (click)="viewMode =1" [ngClass]="{'active':viewMode ==1}">DASHBOARD</li>
+      <li>ACCOUNTS
+        <ul class="vertical-menu">
+          <li (click)="setViewMode(bank)" [ngClass]="{'active':bankId ==bank.id}" *ngFor="let bank of BankAccounts">
+            {{bank.name}} - {{bank.id}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></li>
+          <li (click)="viewMode =3" [ngClass]="{'active':viewMode ==3}">ADD MORE..</li>
+        </ul>
+      </li>
+      <li (click)="viewMode =4" [ngClass]="{'active':viewMode ==4}">BILLER</li>
+      <li (click)="viewMode =5" [ngClass]="{'active':viewMode ==5}">STATEMENT ANALYZER</li>
+    </ul>
+  </div>
+  <div class="column-2" [ngSwitch]="viewMode">
+    <div *ngSwitchCase="1">
+      <app-summary></app-summary>
     </div>
-    <div class="column-2" [ngSwitch]="viewMode">
-      <div *ngSwitchCase="1">
-        <app-summary></app-summary>
-      </div>
-      <div *ngSwitchCase="2" >
-        <app-account></app-account>
-      </div>
-      <div *ngSwitchCase="3">
-        <app-newaccount></app-newaccount>
-      </div>
-      <div *ngSwitchCase="4">
-        <app-biller></app-biller>
-      </div>
-      <div *ngSwitchCase="5">
-        <app-statementanalyzer></app-statementanalyzer>
-      </div>
+    <div *ngSwitchCase="2">
+      <app-account bankName={{bankName}}></app-account>
+    </div>
+    <div *ngSwitchCase="3">
+      <app-newaccount></app-newaccount>
+    </div>
+    <div *ngSwitchCase="4">
+      <app-biller></app-biller>
+    </div>
+    <div *ngSwitchCase="5">
+      <app-statementanalyzer></app-statementanalyzer>
     </div>
   </div>
+</div>
