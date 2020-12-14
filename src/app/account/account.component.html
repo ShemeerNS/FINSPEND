@@ -1,2 +1,30 @@
-<h2>CHASE - 1234</h2>
-<p>Bank info to be read upon clicking each bank</p>
+<h1 id="tableLabel">Account Summary</h1>
+
+<div>Total Cash Available : $2323.00 </div> <div>Upcoming payment of $2323.00 <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!BankStatements"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="BankStatement">
+  <thead>
+    <tr>
+      <th>Sl#</th>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>Withdrawal Date</th>
+      <th>Withdrawal Type</th>
+      <th>Bank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of BankStatement">
+      <td>{{ data.sl }}</td>
+      <td>{{ data.Type }}</td>
+      <td>{{ data.Amount }}</td>
+      <td>{{ data.Wdate }}</td>
+      <td>{{ data.Wtype }}</td>
+      <td>{{ data.name }}</td>
+    </tr>
+  </tbody>
+</table>
