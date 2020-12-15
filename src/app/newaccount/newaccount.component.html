@@ -1,25 +1,37 @@
 <!-- <input type = "submit" class = "vertibutton" value = "Verify"> -->
 <form [formGroup]="accountlisted">
-  <div class="inlineL">
-    <label>
-      Add Accounts: <select class="custom-select" style="margin-top: 100px;" formControlName="addaccounts">
+  <div class="container">
+    <div class="row">
+        <div class="form_title mb-1">
+            <h1 class="float-left">
+                Add Accounts
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+      
+  <div class="col-md-4">
+        <select class="form-control" formControlName="addaccounts">
         <option value="" disabled>Choose your bank</option>
         <option>HDFC</option>
         <option>SBI</option>
         <option>IOB</option>
         <option>CANARA BANK</option>
       </select>
-    </label>
-    <input type="submit" class="vertbutton" value="Verify">
   </div>
-
-  <table>
-    <thead class="text-nowrap">
-      <th>Title</th>
-      <th>Accounts</th>
-      <th>Link the account</th>
-
-    </thead>
+  <div class="col-md-4">
+    <input type="submit" class="btn btn-primary" value="Verify">
+  </div> 
+    </div>
+  <table class="table table-striped">
+     <thead>
+    <tr>
+          <th>Title</th>
+          <th>Accounts</th>
+          <th>Link the account</th>
+          
+        </tr>
+     </thead>
     <tbody>
       <ng-container formArrayName="tableRows">
         <!-- <tr  [formGroupName]="i"> -->
@@ -27,20 +39,20 @@
         <!-- <tr  [formGroupName]="i"> -->
         <tr>
           <td>
-
+BOA
             <!-- <input type="text" formControlName="movieposter"> -->
 
           </td>
 
           <td>
-
+SB-XXXXXX2356
             <!-- <input type="text" formControlName="moviename"> -->
 
           </td>
 
           <td>
 
-            <input type="checkbox" id="check" name="check" value="check" style="float: right;">
+            <input type="checkbox" id="check" name="check" value="check">
 
             <!-- <input formControlName="description"> -->
             <!-- <nav>
@@ -80,24 +92,31 @@
         </tr>
         <!-- </tr> -->
         <tr>
-          <td></td>
-          <td></td>
+          <td>SCB</td>
+          <td>SB-XXXXXX5623</td>
           <td>
-            <input type="checkbox" id="check" name="check" value="check" style="float: right;">
+            <input type="checkbox" id="check" name="check" value="check" >
           </td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
+          <td>CHASE</td>
+          <td>CR-XXXXXX2356</td>
           <td>
-            <input type="checkbox" id="check" name="check" value="check" style="float: right;">
+            <input type="checkbox" id="check" name="check" value="check">
           </td>
         </tr>
 
       </ng-container>
     </tbody>
   </table>
-  <input type="submit" class="hoributton" value="Submit">
-  <input type="button" class="hoributton" value="Cancel" (click)="homeagainscreen()">
+  <div class="row">
+    <div class="col-md-2">
+  <input type="submit" class="btn btn-primary" value="Submit">
+    </div>
+    <div class="col-md-2">
+  <input type="button" class="btn btn-primary" value="Cancel" (click)="homeagainscreen()">
+    </div>
+  </div>
   <!-- <button id="add" (click)="addmoviepage()" class="button">Add A Movie</button> -->
+  </div>
 </form>

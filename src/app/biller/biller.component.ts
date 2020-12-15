@@ -54,7 +54,9 @@ addbillerdata()
   let JSONDatas = [
   {"id": "3","biller":formData.biller,"amount":this.billerForm.value.amount,"fromAccount":this.billerForm.value.fromAccount,"frequency":this.billerForm.value.frequency,"withdrawalDate":this.billerForm.value.withdrawalDate}];
   let data = JSON.stringify(JSONDatas);//JSON.stringify(this.JSONDatas);
-
+alert("Submitted Successfully");
+this.isShown = ! this.isShown;
+this.isbillerShown = !this.isbillerShown;
 }
 cancelbiller()
 {
