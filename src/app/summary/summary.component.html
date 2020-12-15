@@ -1,6 +1,8 @@
 <h1 id="tableLabel">Standing Instructions \ Payment Reminders</h1>
-
-<div class="inlineL" >Total Cash Available : $2323.00 </div> <div class="inlineR" >Upcoming payment of $2323.00 <i class="fa fa-thumbs-down" aria-hidden="true"></i></div>
+<div class="alert alert-danger" role="alert">
+  You don't have sufficient balance for upcoming standing instruction
+</div>
+<div class="inlineL" >Total Cash Available : $2323.00 </div> <div class="inlineR" >Upcoming payment of $2323.00 <i class="fa fa-thumbs-down" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Not sufficient balance on account"></i></div>
 
 <p *ngIf="!BankStatements"><em>Loading...</em></p>
 <div class="inlineR">
