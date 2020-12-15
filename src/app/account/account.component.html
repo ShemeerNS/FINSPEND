@@ -1,5 +1,7 @@
 <h1 id="tableLabel">{{bankName}} - Standing Instructions \ Payment Reminders</h1>
-
+<div class="alert alert-success" role="alert">
+  You have sufficient balance for upcoming standing instruction
+</div>
 <div class="inlineL">Total Cash Available : $2323.00
 
   <p *ngIf="!BankStatements"><em>Loading...</em></p>
@@ -26,7 +28,7 @@
   </table>
 </div>
 
-<div class="inlineR" style="width: 40%;">Upcoming payment of $2323.00 <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+<div class="inlineR" style="width: 40%;">Upcoming payment of $2323.00 <i class="fa fa-thumbs-down" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Not sufficient balance on account"></i>
 
 
 
