@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   viewMode: number = 1;
   bankId: number = -1;
   bankName: string = "";
+  bankNumber: string = "";
   public data;
   slNumber: number = 0;
 
@@ -37,6 +38,7 @@ export class DashboardComponent implements OnInit {
     this.viewMode = 2;
     this.bankId = bank.id;
     this.bankName = bank.name;
+    this.bankNumber = bank.number;
   }
 
 }

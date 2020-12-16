@@ -14,29 +14,28 @@
           <th>Name</th>
           <th>Frequency</th>
            <th>Amount</th>
-          <th>WithdrawalDate</th>
+          <th>Withdrawal Date</th>          
+          <th>Bank</th>
+          <th></th>
         </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let biller of billers">
-        <td>{{ biller.id }}</td>
-        <td>{{ biller.biller }}</td>
-        <td>{{ biller.frequency }}</td>
-            <td>{{ biller.amount }}</td>
-        <td>{{ biller.withdrawalDate }}</td>
+      <tr *ngFor="let biller of billerData">
+        <td>{{ biller.sl }}</td>
+        <td>{{ biller.Name }}</td>
+        <td>{{ biller.Wtype }}</td>
+            <td>{{ biller.Amount }}</td>
+        <td>{{ biller.Wdate }}</td>        
+        <td>{{ biller.Bank }}</td>
+        <td><i class="fa fa-trash" aria-hidden="true"></i></td>
       </tr>
     </tbody>
   </table>
 </div>
 <div class="container" id="addbillerdiv" *ngIf="isShown">
      <form [formGroup] = "billerForm">
-    <div class="row">
-        <div class="form_title mb-3">
-            <h1 class="float-left">
-                Biller
-            </h1>
-        </div>
-    </div>
+        <h1 id="tableLabel">Biller</h1>
+
     <div class="row" style="height: 100px">
         <div class="col-md-3">
             <h3>Biller</h3>
