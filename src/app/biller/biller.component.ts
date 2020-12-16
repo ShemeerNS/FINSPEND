@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import billerData from '../biller.json';
 import { FormControl, FormGroup, FormBuilder, Validators, ReactiveFormsModule  } from '@angular/forms';
 import { Router } from "@angular/router";
+
+import { AppService } from '../app.service';
 
 interface biller {
     id:number;
@@ -17,6 +18,17 @@ interface biller {
   styleUrls: ['./biller.component.css']
 })
 export class BillerComponent implements OnInit {
+  public data;
+  slNumber: number = 0;
+  billerData: {
+    sl: number;
+    Name: string;
+    Amount: number;
+    Wdate: string;
+    Wtype: string;
+    Bank: string;
+  }[] = [];
+
   billerForm: FormGroup = new FormGroup({
     biller: new FormControl(''),
     from:new FormControl(''),
@@ -25,7 +37,17 @@ export class BillerComponent implements OnInit {
     withdrawalDate:new FormControl('')
 }) ;
   constructor(private fb: FormBuilder,           
-  private router:Router ){}
+  private router:Router,_appService: AppService ){
+    this.data = _appService.getBankDetails();
+    for (let bank of this.data.Bank) {
+      //if (bank.Name == this.bankName) {
+        for (let biller of bank.Biller) {
+          this.slNumber++;
+          this.billerData.push({ sl: this.slNumber, Name: biller.Name, Amount: biller.Amount, Wdate: biller.Wdate, Wtype: biller.Wtype, Bank: bank.Name });
+        }
+      //}
+    } 
+  }
 
   ngOnInit(): void {
        this.buildForm();
@@ -41,7 +63,6 @@ export class BillerComponent implements OnInit {
   }
   isShown: boolean = false ; // hidden by default
 isbillerShown: boolean = true;
-billers: biller[] = billerData;
 toggleShow() {
 
 this.isShown = ! this.isShown;

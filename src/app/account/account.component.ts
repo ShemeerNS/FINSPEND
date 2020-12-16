@@ -27,6 +27,7 @@ export class AccountComponent implements OnInit, OnChanges {
 
   BankStatement = this.BankStatements;
   @Input() bankName!: string;
+  @Input() bankNumber!: string;
 
   constructor(_appService: AppService) {
     this.sufficientBalance = true;

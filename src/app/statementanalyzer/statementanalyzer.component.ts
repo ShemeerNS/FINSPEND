@@ -12,7 +12,7 @@ export class StatementanalyzerComponent implements OnInit {
     responsive: true,
   };
   public pieChartLabels: Label[] = [['Shopping'], ['Investment'], 'Expenditure'];
-  public pieChartData: SingleDataSet = [30000, 50000, 20000];
+  public pieChartData: SingleDataSet = [10000, 30000, 60000];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
