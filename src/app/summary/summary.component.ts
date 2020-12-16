@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-summary',
@@ -8,28 +9,58 @@ import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsToolt
   styleUrls: ['./summary.component.css']
 })
 export class SummaryComponent implements OnInit {
+  public data;
+  totalCash: number;
+  pendingPay: number;
+  slNumber: number = 0;
+  sufficientBalance: boolean;
   public pieChartOptions: ChartOptions = {
     responsive: true,
   };
-  public pieChartLabels: Label[] = [['CHASE'], ['BOA'], 'SCB'];
-  public pieChartData: SingleDataSet = [30, 50, 20];
+  public pieChartLabels: Label[] = [];
+  public pieChartData: SingleDataSet = [];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
-  constructor() {  monkeyPatchChartJsTooltip();
-    monkeyPatchChartJsLegend();}
+  constructor(_appService: AppService) {
+    this.sufficientBalance = true;
+    this.data = _appService.getBankDetails();
+    this.totalCash = 0;
+    this.pendingPay = 0;
 
-  BankStatements = [
-    {  sl: 1, Type: 'EMI', Amount :500.89, Wdate : '01/01/2021', Wtype: 'Standing Instruction', name: 'CHASE'},
-    {  sl: 2, Type: 'Insurance', Amount :15000.00, Wdate : '01/01/2021', Wtype: 'Standing Instruction', name: 'BOA'},
-    {  sl: 3, Type: 'Electricity', Amount :800.00, Wdate : '01/01/2021', Wtype: 'Manual', name: 'BOA'},
-    {  sl: 4, Type: 'Mobile', Amount :500.89, Wdate : '01/01/2021', Wtype: 'Manual', name: 'BOA'},
-    {  sl: 5, Type: 'EMI', Amount :500.89, Wdate : '01/01/2021', Wtype: 'Standing Instruction', name: 'BOA'},
-    {  sl: 6, Type: 'EMI', Amount :500.89, Wdate : '01/01/2021', Wtype: 'Standing Instruction', name: 'BOA'},
-    {  sl: 7, Type: 'EMI', Amount :500.89, Wdate : '01/01/2021', Wtype: 'Standing Instruction', name: 'BOA'},
-    {  sl: 8, Type: 'EMI', Amount :500.89, Wdate : '01/01/2021', Wtype: 'Standing Instruction', name: 'SCB'}
-  ];
-  
+    for (let bank of this.data.Bank) {
+
+      this.pieChartLabels.push(bank.Name);
+      this.pieChartData.push(bank.Balance);
+
+      this.totalCash += bank.Balance;
+      this.pendingPay += bank.PendingPayment;
+      if (this.sufficientBalance) {
+        this.sufficientBalance = bank.Balance >= bank.PendingPayment;
+      }
+      for (let standing of bank.StandingInstr) {
+        this.slNumber++;
+        this.BankStatements.push({ sl: this.slNumber, Type: standing.Type, Amount: standing.Amount, Wdate: standing.Wdate, Wtype: standing.Wtype, name: bank.Name });
+      }
+      for (let biller of bank.Biller) {
+        this.slNumber++;
+        this.BankStatements.push({ sl: this.slNumber, Type: biller.Name, Amount: biller.Amount, Wdate: biller.Wdate, Wtype: biller.Wtype, name: bank.Name });
+      }
+    }
+
+    monkeyPatchChartJsTooltip();
+    monkeyPatchChartJsLegend();
+  }
+
+  BankStatements: {
+    sl: number;
+    Type: string;
+    Amount: number;
+    Wdate: string;
+    Wtype: string;
+    name: string;
+  }[] = [];
+
   ngOnInit(): void {
   }
 
