@@ -26,6 +26,7 @@
         AccountNumber: number;
         RoutingNumber: number;
         Balance: number;
+        PendingPayment: number;
         Statement: Statement[];
         StandingInstr: StandingInstr[];
         Biller: Biller[];

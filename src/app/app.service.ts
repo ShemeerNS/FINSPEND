@@ -9,8 +9,23 @@ import bankData from './bankaacounts.json';
 export class AppService {
 
   BankAccounts: Banks = bankData; 
+  pendingPay:number=0;
 
-  constructor() { }
+  constructor() { 
+    for (let bank of this.BankAccounts.Bank) {
+      this.pendingPay = 0;
+      for (let standing of bank.StandingInstr) {
+        this.pendingPay+=standing.Amount;
+      }
+      for (let biller of bank.Biller) {
+        this.pendingPay+=biller.Amount;
+      }
+      bank.PendingPayment=this.pendingPay;
+    }
+  }
 
+  getBankDetails() {  
+    return this.BankAccounts;  
+  }
 
 }

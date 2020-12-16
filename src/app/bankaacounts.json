@@ -4,7 +4,8 @@
         "Name": "CHASE",
         "AccountNumber": 1234435454,
         "RoutingNumber": 233455345,
-        "Balance": 121212,
+        "Balance": 180000,
+        "PendingPayment" : 0,
         "Statement": [
           {
             "Amount": 200,
@@ -21,14 +22,14 @@
           {
             "Type": "EMI",
             "Amount": 20000,
-            "Wdate": "12-14-2020",
+            "Wdate": "12-26-2020",
             "Wtype": "Standing Instruction",
             "Frequency": "Monthly"
           },
           {
             "Type": "EMI",
-            "Amount": 20000,
-            "Wdate": "12-14-2020",
+            "Amount": 40000,
+            "Wdate": "12-31-2020",
             "Wtype": "Standing Instruction",
             "Frequency": "Monthly"
           }
@@ -37,7 +38,7 @@
           {
             "Name": "Phone",
             "Amount": 400,
-            "Wdate": "12-14-2020",
+            "Wdate": "12-31-2020",
             "Wtype": "Manual",
             "Frequency": "Manual"
           }
@@ -45,17 +46,18 @@
       },
       {
         "Name": "BOA",
-        "AccountNumber": 1234435454,
+        "AccountNumber": 1234435455,
         "RoutingNumber": 233455345,
-        "Balance": 121212,
+        "Balance": 5000,
+        "PendingPayment" : 0,
         "Statement": [
           {
-            "Amount": 200,
+            "Amount": 100,
             "Wdate": "12-14-2020",
             "Category": "Shopping"
           },
           {
-            "Amount": 300,
+            "Amount": 700,
             "Wdate": "12-14-2020",
             "Category": "Shopping"
           }
@@ -63,14 +65,14 @@
         "StandingInstr": [
           {
             "Type": "EMI",
-            "Amount": 20000,
+            "Amount": 7000,
             "Wdate": "12-14-2020",
             "Wtype": "Standing Instruction",
             "Frequency": "Monthly"
           },
           {
             "Type": "EMI",
-            "Amount": 20000,
+            "Amount": 1000,
             "Wdate": "12-14-2020",
             "Wtype": "Standing Instruction",
             "Frequency": "Monthly"
@@ -88,17 +90,18 @@
       },
       {
         "Name": "SCB",
-        "AccountNumber": 1234435454,
+        "AccountNumber": 1234435456,
         "RoutingNumber": 233455345,
-        "Balance": 121212,
+        "Balance": 10000,
+        "PendingPayment" : 0,
         "Statement": [
           {
-            "Amount": 200,
+            "Amount": 400,
             "Wdate": "12-14-2020",
-            "Category": "Shopping"
+            "Category": "EMI"
           },
           {
-            "Amount": 300,
+            "Amount": 600,
             "Wdate": "12-14-2020",
             "Category": "Shopping"
           }
@@ -106,14 +109,14 @@
         "StandingInstr": [
           {
             "Type": "EMI",
-            "Amount": 20000,
+            "Amount": 5000,
             "Wdate": "12-14-2020",
             "Wtype": "Standing Instruction",
             "Frequency": "Monthly"
           },
           {
             "Type": "EMI",
-            "Amount": 20000,
+            "Amount": 3000,
             "Wdate": "12-14-2020",
             "Wtype": "Standing Instruction",
             "Frequency": "Monthly"
@@ -121,8 +124,8 @@
         ],
         "Biller": [
           {
-            "Name": "Phone",
-            "Amount": 400,
+            "Name": "Electricity",
+            "Amount": 900,
             "Wdate": "12-14-2020",
             "Wtype": "Manual",
             "Frequency": "Manual"

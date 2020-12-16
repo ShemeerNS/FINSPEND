@@ -7,8 +7,8 @@
       <li (click)="viewMode =1" [ngClass]="{'active':viewMode ==1}">DASHBOARD</li>
       <li>ACCOUNTS
         <ul class="vertical-menu">
-          <li (click)="setViewMode(bank)" [ngClass]="{'active':bankId ==bank.id}" *ngFor="let bank of BankAccounts">
-            {{bank.name}} - {{bank.id}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></li>
+          <li (click)="setViewMode(bank)" [ngClass]="{'active':viewMode ==2 && bankId ==bank.id}" *ngFor="let bank of BankAccounts">
+            {{bank.name}} - {{bank.number}} <i class="fa fa-thumbs-down" aria-hidden="true" *ngIf="!bank.sufficientBalance"></i></li>
           <li (click)="viewMode =3" [ngClass]="{'active':viewMode ==3}">ADD MORE..</li>
         </ul>
       </li>
